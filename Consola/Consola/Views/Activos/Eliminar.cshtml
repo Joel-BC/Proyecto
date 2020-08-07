@@ -1,0 +1,90 @@
+﻿@model Consola.Models.Activos
+
+    <h3>Desea deshabilitar este activo?</h3>
+<div>
+    <h4>Activos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdActivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdActivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codigoActivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codigoActivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombreActivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreActivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.costoActivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.costoActivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.anno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.anno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.meses)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.meses)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.costoAnual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.costoAnual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.costoMensual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.costoMensual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaActivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaActivo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Consola.Models.InstitucionM>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- /.box -->
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Mantenimiento de Institución</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="modal-footer">
+                            @Html.ActionLink("Nuevo Institución", "Crear", "Institucion", null, new { data_modal = "", id = "btnCreate", @class = "btn btn-small btn-primary pull-left" })
+                        </div>
+                        @Html.ValidationMessage("Detalle")
+                        <table id="Datos" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                  
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.idInstitucion)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.institucionN)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Identificacion)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Telefono)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.direccion)
+                                    </th>
+                                    <th>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.idInstitucion)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.institucionN)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Identificacion)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Telefono)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.direccion)
+                                    </td>
+
+                                </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th><div class="panel-footer">Cantidad = @Model.Count()</div></th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+  $(document).ready(function () {
+    $('#Datos').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
+  })
+    </script>
+
+}
